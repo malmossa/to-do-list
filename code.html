@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+    <title>How smart are you?</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img src="/img/nav-logo.png" height="30"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#toggle-menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toggle-menu">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="app.html">The App</a>
+            <a class="nav-link active" href="code.html">The Code</a>
+            <a class="nav-link" href="#">GitRepo</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="text-center mt-5 display-5">The Code for this project</h2>
+      <pre class="line-numbers my-4">
+        <code class="language-javascript">
+          const form = document.querySelector(".quiz-form");
+          const result = document.querySelector(".result");
+          const tryAgain = document.querySelector(".reload");
+
+          const correctAnswers = ["B", "B", "A", "B"];
+
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let userScore = 0;
+
+            const userAnswers = [
+              form.q1.value,
+              form.q2.value,
+              form.q3.value,
+              form.q4.value,
+            ];
+
+            // Check answers
+            userAnswers.forEach((answer, index) => {
+              if (answer === correctAnswers[index]) {
+                userScore += 25;
+              }
+            });
+
+            // Show result on page
+            scrollTo(0, 0); // will scroll to the top on the page 0Y, 0X
+            result.classList.remove("d-none");
+
+            // Animating the score
+            let output = 0;
+
+            const timer = setInterval(() => {
+              result.querySelector("span").textContent = `${output}%`;
+
+              if (output === userScore) {
+                clearInterval(timer);
+              } else {
+                output++;
+              }
+            }, 10);
+          });
+
+          // Refresh the page to start over
+          tryAgain.addEventListener("click", () => {
+            location.reload(true);
+          });
+        </code>
+      </pre>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-2 mt-auto"
+    >
+      <div class="col-md-4 d-flex align-items-center ms-2">
+        <h4>Mansor<span>Dev</span></h4>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-2">
+        <li class="ms-3 social">
+          <a href="https://www.linkedin.com/in/mansor-almossa/" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li class="ms-3 social">
+          <a href="https://github.com/malmossa" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/Js/prism.js"></script>
+    <script>
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+        "remove-trailing": true,
+        "remove-indent": true,
+        "left-trim": true,
+        "right-trim": true,
+      });
+    </script>
+  </body>
+</html>

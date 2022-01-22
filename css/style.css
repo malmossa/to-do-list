@@ -1,0 +1,86 @@
+:root {
+  --primary-color: #3b557c;
+  --secondary-color: #ff0045;
+  --dark-color: #1a1a1a;
+  --white-color: #e7e7e7;
+}
+
+@font-face {
+  font-family: Medusa Gothic;
+  src: url(/fonts/MedusaGothic\ D.otf);
+}
+
+body {
+  color: var(--dark-color);
+  background: #f2f2f2;
+}
+
+nav {
+  background-color: var(--dark-color);
+}
+
+footer {
+  background-color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+
+/* Remove the outline from toggle menue */
+.navbar button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.checklist > li i {
+  color: var(--secondary-color);
+}
+
+/* Icons Colors */
+.jsicon {
+  color: #f7df1e;
+}
+
+.bsicon {
+  color: #563d7c;
+}
+
+.html5icon {
+  color: #e34c26;
+}
+
+.css3icon {
+  color: #264de4;
+}
+
+/* Align The Logo Image */
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+/* FOOTER */
+footer h4 {
+  font-family: Medusa Gothic;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+footer span {
+  color: #ffd700;
+}
+
+footer .social > a {
+  color: var(--white-color);
+  opacity: 0.65;
+}
+
+footer .social > a:hover {
+  opacity: 0.9;
+}

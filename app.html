@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>How smart are you?</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Top Nav -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img src="/img/nav-logo.png" height="30"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#toggle-menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="toggle-menu">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="app.html">The App</a>
+            <a class="nav-link" href="code.html">The Code</a>
+            <a class="nav-link" href="#">GitRepo</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Top Section -->
+    <div class="intro py-3 text-center">
+      <div class="container">
+        <h2 class="display-4 my-2">How Smart Are You?</h2>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="result d-none text-center">
+      <div class="container lead">
+        <h3 class="display-5 text-success">
+          You Are <span class="display-4">0%</span> Smart
+        </h3>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz py-4">
+      <div class="container">
+        <form class="quiz-form">
+          <p class="lead">
+            1 - What is a 4-digit number where the first number is one half the
+            last number, the second number is doubled the first number, and the
+            third number is one-fourth of the other three numbers combined?
+          </p>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="A" />
+            <label class="form-check-lable ms-1">2,474</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q1" value="B" />
+            <label class="form-check-lable ms-1">4,858</label>
+          </div>
+
+          <p class="lead">
+            2 - Solve by figuring out which sequence belongs next in the
+            following sequence: HTFHFFTF is to 62868828 as FTTHTHHT is to what?
+          </p>
+          <div class="form-check my-2">
+            <input type="radio" name="q2" value="A" />
+            <label class="form-check-lable ms-1">68828662</label>
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q2" value="B" />
+            <label class="form-check-lable ms-1">82262882</label>
+          </div>
+
+          <p class="lead">
+            3 - Chandler is taller than Ross, and Joey is shorter than Chandler.
+            Which of the following statements is most accurate?
+          </p>
+          <div class="form-check my-2">
+            <input type="radio" name="q3" value="A" />
+            <label class="form-check-lable ms-1"
+              >It is impossible to tell whether Ross or Joey is taller</label
+            >
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q3" value="B" />
+            <label class="form-check-lable ms-1"
+              >Ross and Joey are the same height</label
+            >
+          </div>
+
+          <p class="lead">
+            4 - If a plane leaves Italy traveling Northwest at 600 mph and
+            crashes in a city somewhere in the heart of France after two hours
+            of flying, where do they bury the survivors?
+          </p>
+          <div class="form-check my-2">
+            <input type="radio" name="q4" value="A" />
+            <label class="form-check-lable ms-1"
+              >Return them home to Italy</label
+            >
+          </div>
+          <div class="form-check my-2">
+            <input type="radio" name="q4" value="B" />
+            <label class="form-check-lable ms-1">Nowhere</label>
+          </div>
+
+          <button type="submit" class="btn btn-dark mt-3">Submit</button>
+          <button type="button" class="btn btn-primary mt-3 reload">
+            Try again
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-2 mt-auto"
+    >
+      <div class="col-md-4 d-flex align-items-center ms-2 align-middle">
+        <h4>Mansor<span>Dev</span></h4>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-2">
+        <li class="ms-3 social">
+          <a href="https://www.linkedin.com/in/mansor-almossa/" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+        </li>
+        <li class="ms-3 social">
+          <a href="https://github.com/malmossa" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/Js/app.js"></script>
+  </body>
+</html>
