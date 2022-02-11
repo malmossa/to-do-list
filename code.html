@@ -54,52 +54,56 @@
       <h2 class="text-center mt-5 display-5">The Code for this project</h2>
       <pre class="line-numbers my-4">
         <code class="language-javascript">
-          const form = document.querySelector(".quiz-form");
-          const result = document.querySelector(".result");
-          const tryAgain = document.querySelector(".reload");
+          const emptList = document.querySelector(".empty");
+          const list = document.querySelector("ul");
+          const addTodo = document.querySelector(".add");
+          const searchInput = document.querySelector(".search");
 
-          const correctAnswers = ["B", "B", "A", "B"];
-
-          form.addEventListener("submit", (e) => {
+          // Adding new to do item
+          addTodo.addEventListener("submit", (e) => {
             e.preventDefault();
-
-            let userScore = 0;
-
-            const userAnswers = [
-              form.q1.value,
-              form.q2.value,
-              form.q3.value,
-              form.q4.value,
-            ];
-
-            // Check answers
-            userAnswers.forEach((answer, index) => {
-              if (answer === correctAnswers[index]) {
-                userScore += 25;
-              }
-            });
-
-            // Show result on page
-            scrollTo(0, 0); // will scroll to the top on the page 0Y, 0X
-            result.classList.remove("d-none");
-
-            // Animating the score
-            let output = 0;
-
-            const timer = setInterval(() => {
-              result.querySelector("span").textContent = `${output}%`;
-
-              if (output === userScore) {
-                clearInterval(timer);
-              } else {
-                output++;
-              }
-            }, 10);
+            if (addTodo.add.value) {
+              emptList.style.display = "none";
+              list.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>${addTodo.add.value}</span>
+              <i class="far fa-trash-alt delete"></i>
+              </li>`;
+            } else {
+              alert("Please add to do item first");
+            }
+            // Clear the input after adding
+            addTodo.reset();
           });
 
-          // Refresh the page to start over
-          tryAgain.addEventListener("click", () => {
-            location.reload(true);
+          // Delete to do item and mark as completed with event delegation
+          list.addEventListener("click", (e) => {
+            if (e.target.classList.contains("delete")) {
+              if (confirm("Are you sure!")) {
+                e.target.parentElement.remove();
+              }
+            }
+
+            e.target.classList.toggle("completed");
+
+            if (list.innerHTML === "") {
+              emptList.style.display = "block";
+            }
+          });
+
+          // Filter the to do list by key word
+          searchInput.addEventListener("keyup", () => {
+            const text = searchInput.search.value.toLowerCase();
+            const listItem = document.querySelectorAll(".list-group-item");
+
+            listItem.forEach((todo) => {
+              const todoItem = todo.textContent.trim();
+
+              if (todoItem.includes(text)) {
+                todo.classList.remove("filtered");
+              } else {
+                todo.classList.add("filtered");
+              }
+            });
           });
         </code>
       </pre>
