@@ -16,9 +16,9 @@
     />
     <link rel="icon" href="/img/favicon.png" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>How smart are you?</title>
+    <title>To do list</title>
   </head>
-  <body class="d-flex flex-column min-vh-100">
+  <body class="d-flex flex-column min-vh-100 body">
     <!-- Top Nav -->
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container-fluid">
@@ -49,92 +49,34 @@
       </div>
     </nav>
 
-    <!-- Top Section -->
-    <div class="intro py-3 text-center">
-      <div class="container">
-        <h2 class="display-4 my-2">How Smart Are You?</h2>
-      </div>
-    </div>
-
-    <!-- Result Section -->
-    <div class="result d-none text-center">
-      <div class="container lead">
-        <h3 class="display-5 text-success">
-          You Are <span class="display-4">0%</span> Smart
-        </h3>
-      </div>
-    </div>
-
-    <!-- Quiz Section -->
-    <div class="quiz py-4">
-      <div class="container">
-        <form class="quiz-form">
-          <p class="lead">
-            1 - What is a 4-digit number where the first number is one half the
-            last number, the second number is doubled the first number, and the
-            third number is one-fourth of the other three numbers combined?
-          </p>
-          <div class="form-check my-2">
-            <input type="radio" name="q1" value="A" />
-            <label class="form-check-lable ms-1">2,474</label>
-          </div>
-          <div class="form-check my-2">
-            <input type="radio" name="q1" value="B" />
-            <label class="form-check-lable ms-1">4,858</label>
-          </div>
-
-          <p class="lead">
-            2 - Solve by figuring out which sequence belongs next in the
-            following sequence: HTFHFFTF is to 62868828 as FTTHTHHT is to what?
-          </p>
-          <div class="form-check my-2">
-            <input type="radio" name="q2" value="A" />
-            <label class="form-check-lable ms-1">68828662</label>
-          </div>
-          <div class="form-check my-2">
-            <input type="radio" name="q2" value="B" />
-            <label class="form-check-lable ms-1">82262882</label>
-          </div>
-
-          <p class="lead">
-            3 - Chandler is taller than Ross, and Joey is shorter than Chandler.
-            Which of the following statements is most accurate?
-          </p>
-          <div class="form-check my-2">
-            <input type="radio" name="q3" value="A" />
-            <label class="form-check-lable ms-1"
-              >It is impossible to tell whether Ross or Joey is taller</label
-            >
-          </div>
-          <div class="form-check my-2">
-            <input type="radio" name="q3" value="B" />
-            <label class="form-check-lable ms-1"
-              >Ross and Joey are the same height</label
-            >
-          </div>
-
-          <p class="lead">
-            4 - If a plane leaves Italy traveling Northwest at 600 mph and
-            crashes in a city somewhere in the heart of France after two hours
-            of flying, where do they bury the survivors?
-          </p>
-          <div class="form-check my-2">
-            <input type="radio" name="q4" value="A" />
-            <label class="form-check-lable ms-1"
-              >Return them home to Italy</label
-            >
-          </div>
-          <div class="form-check my-2">
-            <input type="radio" name="q4" value="B" />
-            <label class="form-check-lable ms-1">Nowhere</label>
-          </div>
-
-          <button type="submit" class="btn btn-dark mt-3">Submit</button>
-          <button type="button" class="btn btn-primary mt-3 reload">
-            Try again
-          </button>
+    <!-- Main Content -->
+    <div class="container-sm">
+      <!-- Top Section -->
+      <header class="text-center my-4">
+        <h1 class="mb-4 display-5">TO DO LIST</h1>
+        <form class="search">
+          <input
+            class="form-control m-auto"
+            type="text"
+            name="search"
+            placeholder="SEARCH TO DO LIST"
+          />
         </form>
+      </header>
+      <!-- To Do List -->
+      <div class="empty text-center mb-3">
+        <i class="far fa-edit fa-3x mb-3"></i>
+        <h4>To do items will appear here</h4>
       </div>
+      <ul class="list-group todo-list mx-auto"></ul>
+      <!-- Add To Do -->
+      <form class="add text-center my-4">
+        <label class="mb-2">Add a new to do...</label>
+        <input class="form-control m-auto" type="text" name="add" />
+        <div class="d-grid mt-2">
+          <button type="submit" class="btn btn-dark">ADD</button>
+        </div>
+      </form>
     </div>
 
     <!-- Footer -->
@@ -163,6 +105,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+
     <script src="/Js/app.js"></script>
   </body>
 </html>
